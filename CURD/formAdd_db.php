@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_POST['name']) && isset($_POST['surname'])){
+    if(isset($_POST['name']) && isset($_POST['surname']) && ($_POST['img_file'])){
 
     require_once 'connect.php';
 
@@ -10,15 +10,19 @@
     $tell = $_POST['tell'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
+    $img_file = (isset($_POST['img_file']) ? $_POST['img_file'] : '');
+    $upload=$_FILES['img_file'];
+    
 
-    $stmt = $conn->prepare("INSERT INTO tbl_member (name, surname, address, tell, email, gender)
-    VALUES (:name, :surname, :address, :tell, :email, :gender)");
+    $stmt = $conn->prepare("INSERT INTO tbl_member (name, surname, address, tell, email, gender, img_file)
+    VALUES (:name, :surname, :address, :tell, :email, :gender, :img_file)");
     $stmt->bindParam(':name', $name, PDO::PARAM_STR);
     $stmt->bindParam(':surname', $surname , PDO::PARAM_STR);
     $stmt->bindParam(':address', $address , PDO::PARAM_STR);
     $stmt->bindParam(':tell', $tell , PDO::PARAM_STR);
     $stmt->bindParam(':email', $email , PDO::PARAM_STR);
     $stmt->bindParam(':gender', $gender , PDO::PARAM_STR);
+    $stmt->bindParam(':img_file', $img_file, PDO::PARAM_STR);
     $result = $stmt->execute();
 
     echo '

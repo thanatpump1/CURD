@@ -49,6 +49,8 @@
                   <input type="text" name="gender" class="form-control" required minlength="3" placeholder="เพศ">
                 </div>
                 </div>
+                <font color="red">*อัพโหลดได้เฉพาะ .jpeg , .jpg , .png </font>
+                <input type="file" name="img_file" required   class="form-control" accept="image/jpeg, image/png, image/jpg"> <br>
                 <button type="submit" class="btn btn-primary">เพิ่มข้อมูล</button>
               </form>
             </div>

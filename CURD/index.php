@@ -22,6 +22,7 @@
                                 <th width="15%">เบอร์โทร</th>
                                 <th width="20%">Email</th>
                                 <th width="20%">เพศ</th>
+                                <th width="20%">รูปภาพ</th>
                                 <th width="5%">แก้ไข</th>
                                 <th width="5%">ลบ</th>
                             </tr>
@@ -43,6 +44,7 @@
                                 <td><?= $k['tell'];?></td>
                                 <td><?= $k['email'];?></td>
                                 <td><?= $k['gender'];?></td>
+                                <td><img src="upload/<?= $k['img_file'];?>" width="70px"></td>
                                 <td><a href="formEdit.php?id=<?= $k['id'];?>" class="btn btn-warning btn-sm">แก้ไข</a></td>
                                 <td><a href="del.php?id=<?= $k['id'];?>" class="btn btn-danger btn-sm" onclick="return confirm('ยืนยันการลบข้อมูล !!');">ลบ</a></td>
                             </tr>

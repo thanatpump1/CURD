@@ -1,6 +1,6 @@
 <?php
  //ถ้ามีค่าส่งมาจากฟอร์ม
-if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['id']) && isset($_POST['address']) && isset($_POST['tell']) && isset($_POST['email']) && isset($_POST['gender'])) {
+if(isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['id']) && isset($_POST['address']) && isset($_POST['tell']) && isset($_POST['email']) && isset($_POST['gender']) && ($_POST['img_file'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
      require_once 'connect.php';
 //ประกาศตัวแปรรับค่าจากฟอร์ม
@@ -11,8 +11,11 @@ $address = $_POST['address'];
 $tell = $_POST['tell'];
 $email = $_POST['email'];
 $gender = $_POST['gender'];
+$img_file = (isset($_POST['img_file']) ? $_POST['img_file'] : '');
+$upload=$_FILES['img_file'];
+
 //sql update
-$stmt = $conn->prepare("UPDATE  tbl_member SET name=:name, surname=:surname, address=:address, tell=:tell, email=:email, gender=:gender WHERE id=:id");
+$stmt = $conn->prepare("UPDATE  tbl_member SET name=:name, surname=:surname, address=:address, tell=:tell, email=:email, gender=:gender, img_file=:img_file WHERE id=:id");
 $stmt->bindParam(':id', $id , PDO::PARAM_INT);
 $stmt->bindParam(':name', $name , PDO::PARAM_STR);
 $stmt->bindParam(':surname', $surname , PDO::PARAM_STR);
@@ -20,6 +23,7 @@ $stmt->bindParam(':address', $address , PDO::PARAM_STR);
 $stmt->bindParam(':tell', $tell , PDO::PARAM_STR);
 $stmt->bindParam(':email', $email , PDO::PARAM_STR);
 $stmt->bindParam(':gender', $gender , PDO::PARAM_STR);
+$stmt->bindParam(':img_file', $img_file, PDO::PARAM_STR);
 $stmt->execute();
 
 // sweet alert 

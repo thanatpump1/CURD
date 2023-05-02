@@ -62,6 +62,8 @@
                 <input type="text" name="gender" class="form-control" required value="<?= $row['gender'];?>" minlength="3">
               </div>
             </div>
+            <font color="red">*อัพโหลดได้เฉพาะ .jpeg , .jpg , .png </font>
+            <input type="file" name="img_file" required   class="form-control" accept="image/jpeg, image/png, image/jpg"> <br>
             <input type="hidden" name="id" value="<?= $row['id'];?>">
             <button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button>
           </form>
