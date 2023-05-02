@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 02, 2023 at 07:08 AM
+-- Generation Time: May 02, 2023 at 07:12 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -42,8 +42,7 @@ CREATE TABLE `tbl_member` (
 --
 
 INSERT INTO `tbl_member` (`id`, `name`, `surname`, `address`, `tell`, `email`, `gender`) VALUES
-(1, 'ธนัช', 'ถิ่นชีลอง', '333/395 The Base Condo ถนน มิตรภาพ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000', '0956548405', 'thanat.tcl@kkumail.com', 'ชาย'),
-(3, 'asd', 'asd', 'asd', 'asd', 'asd', 'asd');
+(1, 'ธนัช', 'ถิ่นชีลอง', '333/395 The Base Condo ถนน มิตรภาพ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000', '0956548405', 'thanat.tcl@kkumail.com', 'ชาย');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +62,7 @@ ALTER TABLE `tbl_member`
 -- AUTO_INCREMENT for table `tbl_member`
 --
 ALTER TABLE `tbl_member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
